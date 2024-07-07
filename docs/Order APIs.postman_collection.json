@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "e49cddfb-c745-4f71-843b-454480737a35",
+		"name": "Order APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16137782"
+	},
+	"item": [
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|Jg63wDiX71yJKVJi02PX4dsYN60Gn4jIUDO0Gt3H39e8c6b7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_name\": \"Jhone\",\r\n    \"order_value\": 250.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/new-order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"new-order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customer_name\": \"Jhone\",\r\n    \"order_value\": 250.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/new-order",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"new-order"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jul 2024 15:28:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"order_id\": \"0001\",\n    \"process_id\": 3,\n    \"status\": \"Processing\"\n}"
+						}
+					]
+				},
+				{
+					"name": "https://wibip.free.beeceptor.com/order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"Order_ID\": \"0001\",\r\n\"Customer_Name\": \"Jhone\",\r\n\"Order_Value\": 250.00,\r\n\"Order_Date\": \"2023-02-15 10:12:42\",\r\n\"Order_Status\": \"Processing\",\r\n\"Process_ID\": \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wibip.free.beeceptor.com/order",
+							"protocol": "https",
+							"host": [
+								"wibip",
+								"free",
+								"beeceptor",
+								"com"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "https://wibip.free.beeceptor.com/order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\"Order_ID\": \"0001\",\r\n\"Customer_Name\": \"Jhone\",\r\n\"Order_Value\": 250.00,\r\n\"Order_Date\": \"2023-02-15 10:12:42\",\r\n\"Order_Status\": \"Processing\",\r\n\"Process_ID\": \"4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wibip.free.beeceptor.com/order",
+									"protocol": "https",
+									"host": [
+										"wibip",
+										"free",
+										"beeceptor",
+										"com"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jul 2024 15:13:34 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "429 - Too Many Requests. Refer: https://beeceptor.com/pricing/"
+						}
+					]
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|Jg63wDiX71yJKVJi02PX4dsYN60Gn4jIUDO0Gt3H39e8c6b7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/orders",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jul 2024 15:51:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"code\": \"0001\",\n            \"customer_name\": \"Jhone\",\n            \"order_value\": \"250.00\",\n            \"process_id\": 9,\n            \"status\": \"Processing\",\n            \"created_at\": \"2024-07-07T11:28:43.000000Z\",\n            \"updated_at\": \"2024-07-07T11:28:43.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"code\": \"0001\",\n            \"customer_name\": \"Jhone\",\n            \"order_value\": \"250.00\",\n            \"process_id\": 4,\n            \"status\": \"Processing\",\n            \"created_at\": \"2024-07-07T15:20:52.000000Z\",\n            \"updated_at\": \"2024-07-07T15:20:52.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"code\": \"0001\",\n            \"customer_name\": \"Jhone\",\n            \"order_value\": \"250.00\",\n            \"process_id\": 2,\n            \"status\": \"Processing\",\n            \"created_at\": \"2024-07-07T15:21:20.000000Z\",\n            \"updated_at\": \"2024-07-07T15:21:20.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"code\": \"0001\",\n            \"customer_name\": \"Jhone\",\n            \"order_value\": \"250.00\",\n            \"process_id\": 7,\n            \"status\": \"Processing\",\n            \"created_at\": \"2024-07-07T15:26:03.000000Z\",\n            \"updated_at\": \"2024-07-07T15:26:03.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"code\": \"0001\",\n            \"customer_name\": \"Jhone\",\n            \"order_value\": \"250.00\",\n            \"process_id\": 8,\n            \"status\": \"Processing\",\n            \"created_at\": \"2024-07-07T15:27:16.000000Z\",\n            \"updated_at\": \"2024-07-07T15:27:16.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"code\": \"0001\",\n            \"customer_name\": \"Jhone\",\n            \"order_value\": \"250.00\",\n            \"process_id\": 3,\n            \"status\": \"Processing\",\n            \"created_at\": \"2024-07-07T15:28:19.000000Z\",\n            \"updated_at\": \"2024-07-07T15:28:19.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"code\": \"0001\",\n            \"customer_name\": \"Jhone\",\n            \"order_value\": \"250.00\",\n            \"process_id\": 7,\n            \"status\": \"Processing\",\n            \"created_at\": \"2024-07-07T15:28:59.000000Z\",\n            \"updated_at\": \"2024-07-07T15:28:59.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\" : \"admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\" : \"admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 10:34:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"3|CpWFrBq6tUhGWTo5yeg7OGfxhIi0dJ1DVABIOalr23c13804\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Admin\",\n        \"email\": \"admin@gmail.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "admin user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|y6e1FQBlLXNjc9AgMQM8Z16T6lKORJoyC7udJyW1dbd5182b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user-admin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user-admin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "admin user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user-admin",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user-admin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 10:51:22 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Admin\",\n    \"email\": \"admin@gmail.com\"\n}"
+				}
+			]
+		}
+	]
+}

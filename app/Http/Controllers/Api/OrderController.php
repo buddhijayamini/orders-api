@@ -13,6 +13,26 @@ use Throwable;
 
 class OrderController extends Controller
 {
+    public function index()
+    {
+        try {
+            // Fetch all orders
+            $orders = Order::all();
+
+            // Return the list of orders in the response
+            return response()->json([
+                'status' => 'success',
+                'data' => $orders
+            ], 200);
+        } catch (Throwable $e) {
+            // Handle any errors
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Failed to fetch orders: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -77,7 +97,7 @@ class OrderController extends Controller
         }
 
         // Increment the last order ID to determine the next one
-        $lastOrderId = $lastOrder->order_id;
+        $lastOrderId = $lastOrder->id;
         $nextOrderId = '000' . ($lastOrderId + 1); // Concatenate and format
 
         return $nextOrderId;
